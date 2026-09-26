@@ -1,15 +1,40 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+class kioskAge
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+
+        // Variable Declarations
+        double personsAge = 0;
+        String trash = "";
+
+        // input values from the user
+        System.out.print("Please enter your age: ");
+
+        if (in.hasNextDouble())
+        {
+            // OK safe to read in a number
+            personsAge = in.nextDouble();
+            in.nextLine();
+
+            // process them
+            if (personsAge >= 21)
+            {
+                System.out.println("Please take your wristband.");
+            }
+        }
+        else
+        {
+            // Not a number, so can't use nextDouble()!
+            trash = in.nextLine();
+
+            System.out.println("\nYou entered: " + trash);
+            System.out.println("Please enter a valid age.");
         }
     }
+
 }
